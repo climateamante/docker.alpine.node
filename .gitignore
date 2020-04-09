@@ -1,0 +1,71 @@
+# macOS: Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+.DS_Store
+Icon?
+.Trashes
+.AppleDouble
+.LSOverride
+
+# macOS: directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# macOS: cache of image thumbnails
+._*
+
+# node, npm, yarn, etc
+app/node_modules
+app/package-lock.json
+/node_modules
+*./npm-debug.log
+*./node_modules
+*./.nvm
+
+
+# git:
+.gitconfig
+
+# offline files: api.key
+*.api.key
+*.*.key
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+
+# IDE - VSCode
+.vscode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
