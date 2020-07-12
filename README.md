@@ -1,37 +1,42 @@
-# docker: alpine.node.app
-> `alpine:3.9.0` `node:12.16.2`, `lite-Server 2.5.4`
+## alpine.node: docker build 
+- docker: 19.03.8 (build afacb8b)
+- alpine: 3.11.6 (LTS)
+> `cat /etc/*-release`
+- node: 12.18.12 (LTS)
+> `node --version`
+- npm: 6.14.5
+> `npm --version`
+- npx 6.14.5
+> `npx --version`
+- yarn: 1.22.4
+> `yarn --version`
+
 
 ### setup:
  - folder structure for docker.alpine:
-    - `var/www/app/`
+    - ``var/www/app/``
 
  - folder structure for the lite-server:
-    -  `var/www/app/public/index.html`
-
-### npm installs 
- 
- - lite-server@2.5.4
-    - `small minimal http server for web view`
+    -  ``var/www/app/public/index.html``
 
 ### example:
+ - ``Docker run wants absolute paths``
+ - ``docker-compose is just a stand-in for the docker-engine client``
+ - Start with ``docker-compose up``
+ - Otherwise use our custom bash command ``dockr`` for complex docker shortcuts
 
- - `Docker run wants absolute paths`
- - `docker-compose is just a stand-in for the docker-engine client`
- - Start with `docker-compose up`
- - Otherwise use our custom bash command `dockr` for complex docker shortcuts
-
-``bash
+```bash
 docker run \
 -v $PWD/app:/var/www/app \
 -p 80:8080 \
 --name alpine.node.dev \
--it --rm researchranks/alpine.node:12.16.2 npm start
-``
+-it --rm researchranks/alpine.node:alpine.3.11.6.node.12.18.12 npm start
+```
 
-``bash
+```bash
 docker run \
 -v $PWD/app:/var/www/app \
 -p 80:8080 \
 --name alpine.node.dev \
--it --rm researchranks/alpine.node:12.16.2 /bin/ash
-``
+-it --rm researchranks/alpine.node:alpine.3.11.6.node.12.18.12 /bin/ash
+```

@@ -1,29 +1,26 @@
-# docker-enginge: 17.06.0+
-# docker-compose.yml preferes spaces over tabs
+# docker-engine: 19.03.0+
+# docker-compose.yml: preferes spaces over tabs
 
-version: '3.3'
+version: '3.8'
 
 services:
 
   node.app:
-    container_name: alpine.node.app
+    container_name: alpine.node.dev
     volumes:
         - ./app:/var/www/app/
     build:
         labels:
             alpine.node.app.description: "template for boilerplate"
-        
         context: ./
         dockerfile: ./dockerfiles/alpine.node.dockerfile.sh
-        
-    command: npm start
+              
+
+    env_file:
+        - ./build.env
+    command: /bin/ash
     
-    # equivilent of docker run -it
-    # stdin_open: true
-    # tty: true
-
-    image: researchranks/alpine.node:12.16.2
-
+    image: researchranks/alpine.node:alpine.3.11.6.node.12.18.12
     expose:
         - 8080
 
